@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* Highlight colors */
+    --highlight-purple: 262 83% 58%;
+    --highlight-green: 142 71% 45%;
+    --highlight-yellow: 47 95% 55%;
+    --highlight-red: 0 84% 60%;
+    --highlight-blue: 206 100% 50%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    /* Highlight colors for dark mode */
+    --highlight-purple: 262 83% 68%;
+    --highlight-green: 142 71% 55%;
+    --highlight-yellow: 47 95% 65%;
+    --highlight-red: 0 84% 70%;
+    --highlight-blue: 206 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .highlight-purple {
+    @apply text-[hsl(var(--highlight-purple))];
+  }
+  
+  .highlight-green {
+    @apply text-[hsl(var(--highlight-green))];
+  }
+  
+  .highlight-yellow {
+    @apply text-[hsl(var(--highlight-yellow))];
+  }
+  
+  .highlight-red {
+    @apply text-[hsl(var(--highlight-red))];
+  }
+  
+  .highlight-blue {
+    @apply text-[hsl(var(--highlight-blue))];
+  }
+}
+
+/* Timeline styles */
+.wrap {
+  @apply relative;
+}
+
+.wrap::after {
+  @apply absolute left-1/2 w-1 h-full bg-primary content-[''] -ml-0.5;
+}
+
+.wrap .timeline-event:nth-child(odd) {
+  @apply flex-row-reverse;
+}
+
+.wrap .timeline-event:nth-child(odd) .date {
+  @apply text-right;
+}
+
+.wrap .timeline-event:nth-child(odd) .content {
+  @apply text-left;
+}
+
+.wrap .timeline-event:nth-child(even) .date {
+  @apply text-left;
+}
+
+.wrap .timeline-event:nth-child(even) .content {
+  @apply text-right;
+}
+
