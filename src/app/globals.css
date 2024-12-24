@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 
+  Green
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+    --primary: 152 72% 45%; 
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 90%;
+    --secondary-foreground: 240 10% 10%;
+    --muted: 240 10% 90%;
+    --muted-foreground: 240 10% 50%;
+    --accent: 152 72% 45%; 
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 85%;
+    --input: 240 10% 85%;
+    --ring: 152 72% 45%; 
+    --radius: 0.5rem;
+    --chart-1: 152 72% 45%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 43 74% 66%;
+    --chart-4: 27 87% 67%;
+    --chart-5: 340 75% 55%;
+  }
+  
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 152 72% 45%; 
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5.9% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5.9% 15%;
+    --muted-foreground: 240 3.8% 60%;
+    --accent: 152 72% 45%; 
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 15%;
+    --input: 240 5.9% 15%;
+    --ring: 152 72% 45%; 
+    --chart-1: 152 72% 45%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 43 74% 66%;
+    --chart-4: 27 87% 67%;
+    --chart-5: 340 75% 55%;
+  } 
+    */
+
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+    --primary: 258 78% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 90%;
+    --secondary-foreground: 240 10% 10%;
+    --high-color: 258 78% 58%;
+    --muted: 240 10% 90%;
+    --muted-foreground: 240 10% 50%;
+    --accent: 258 78% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 85%;
+    --input: 240 10% 85%;
+    --ring: 258 78% 58%;
+    --radius: 0.5rem;
+    --chart-1: 258 78% 58%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 43 74% 66%;
+    --chart-4: 27 87% 67%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 258 78% 58%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5.9% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --high-color: 320 65% 58%;
+    --muted: 240 5.9% 15%;
+    --muted-foreground: 240 3.8% 60%;
+    --accent: 258 78% 58%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 15%;
+    --input: 240 5.9% 15%;
+    --ring: 258 78% 58%;
+    --chart-1: 258 78% 58%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 43 74% 66%;
+    --chart-4: 27 87% 67%;
+    --chart-5: 340 75% 55%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply btn border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .gradient-bg {
+    @apply fixed -z-10 rounded-full opacity-50 blur-3xl;
+  }
+}
+
+.wrap {
+  @apply relative;
+}
+
+.wrap::after {
+  @apply absolute left-1/2 w-px h-full bg-border -ml-px;
+  content: '';
+}
